@@ -52,11 +52,14 @@
   height: 19px;
 }
 
+card like ativo {
+}
+
 .card__like:hover {
   opacity: 0.5;
 }
 
-@media (max-width: 880px) {
+@media (max-width: 900px) {
   .content__cards {
     grid-template-columns: repeat(2, auto);
     justify-content: center;

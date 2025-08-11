@@ -1,152 +1,195 @@
 <!DOCTYPE html>
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Webpage estática criada para fins de aprendizado de javascript"
-  />
-  <meta name="author" content="Vinicius Gerhardt" />
-  <meta name="keywords" content="Tripleten,around,responsive,js,css,html" />
-  <title>EUA Afora</title>
-  <link rel="stylesheet" href="./pages/index.css" />
-  <link rel="shortcut icon" href="./favicon.ico" type="image/ico" />
-</head>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Webpage estática criada para fins de aprendizado de javascript"
+    />
+    <meta name="author" content="Vinicius Gerhardt" />
+    <meta name="keywords" content="Tripleten,around,responsive,js,css,html" />
+    <title>EUA Afora</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/ico" />
 
-<body>
-  <div class="page">
-    <header class="header">
-      <img
-        class="header__logo"
-        src="./images/header.png"
-        alt="Logo Around USA"
-      />
-      <img
-        class="header__line"
-        src="./images/header__line.png"
-        alt="Linha divisória do header"
-      />
-    </header>
-    <main class="content">
-      <section class="content__profile">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="header">
         <img
-          class="profile__picture"
-          src="./images/profile/picture.png"
-          alt="profile picture"
+          class="header__logo"
+          src="./images/header.png"
+          alt="Logo Around USA"
         />
-        <div class="profile">
-          <h1 class="profile__name">Jacques Cousteau</h1>
-          <button class="profile__edit"></button>
-          <h2 class="profile__description">Explorador</h2>
-        </div>
-        <button class="profile__add"></button>
-      </section>
-      <section class="content__cards">
-        <!-- 1 cartao-->
-        <div class="cards__card">
+        <img
+          class="header__line"
+          src="./images/header__line.png"
+          alt="Linha divisória do header"
+        />
+      </header>
+      <main class="content">
+        <section class="content__profile">
           <img
-            class="card__image"
-            src="./images/cards/Yosemite.jpg"
-            alt="Foto do vale de Yosemite"
+            class="profile__picture"
+            src="./images/profile/picture.png"
+            alt="profile picture"
           />
-          <div class="card__footer">
-            <p class="card__name">Vale de Yosemite</p>
-            <button
-              class="card__like"
-              aria-label="botao like"
-              type="button"
-            ></button>
+          <div class="profile">
+            <div class="profile__resposive">
+              <h1 class="profile__name" id="profile__name">Jacques Cousteau</h1>
+              <button class="profile__edit" id="profile__edit"></button>
+            </div>
+            <h2 class="profile__description">Explorador</h2>
           </div>
-        </div>
+          <button class="profile__add"></button>
+        </section>
+        <section class="content__cards">
+          <!-- 1 cartao-->
+          <div class="cards__card">
+            <img
+              class="card__image"
+              src="./images/cards/Yosemite.jpg"
+              alt="Foto do vale de Yosemite"
+            />
+            <div class="card__footer">
+              <p class="card__name">Vale de Yosemite</p>
+              <button
+                class="card__like"
+                aria-label="botao like"
+                type="button"
+              ></button>
+            </div>
+          </div>
 
-        <!-- 2 cartao-->
-        <div class="cards__card">
-          <img
-            class="card__image"
-            src="./images/cards/Louise.png"
-            alt="Foto do Lago Louise"
-          />
-          <div class="card__footer">
-            <p class="card__name">Lago Louise</p>
-            <button
-              class="card__like"
-              aria-label="botao like"
-              type="button"
-            ></button>
+          <!-- 2 cartao-->
+          <div class="cards__card">
+            <img
+              class="card__image"
+              src="./images/cards/Louise.png"
+              alt="Foto do Lago Louise"
+            />
+            <div class="card__footer">
+              <p class="card__name">Lago Louise</p>
+              <button
+                class="card__like"
+                aria-label="botao like"
+                type="button"
+              ></button>
+            </div>
           </div>
-        </div>
 
-        <!-- 3 cartao-->
-        <div class="cards__card">
-          <img
-            class="card__image"
-            src="./images/cards/Montanha.png"
-            alt="Foto da Montanha"
-          />
-          <div class="card__footer">
-            <p class="card__name">Montanhas Care...</p>
-            <button
-              class="card__like"
-              aria-label="botao like"
-              type="button"
-            ></button>
+          <!-- 3 cartao-->
+          <div class="cards__card">
+            <img
+              class="card__image"
+              src="./images/cards/Montanha.png"
+              alt="Foto da Montanha"
+            />
+            <div class="card__footer">
+              <p class="card__name">Montanhas Care...</p>
+              <button
+                class="card__like"
+                aria-label="botao like"
+                type="button"
+              ></button>
+            </div>
           </div>
-        </div>
 
-        <!-- 4 cartao-->
-        <div class="cards__card">
-          <img
-            class="card__image"
-            src="./images/cards/Latemar.png"
-            alt="Foto da Montanha"
-          />
-          <div class="card__footer">
-            <p class="card__name">Latemar</p>
-            <button
-              class="card__like"
-              aria-label="botao like"
-              type="button"
-            ></button>
+          <!-- 4 cartao-->
+          <div class="cards__card">
+            <img
+              class="card__image"
+              src="./images/cards/Latemar.png"
+              alt="Foto da Montanha"
+            />
+            <div class="card__footer">
+              <p class="card__name">Latemar</p>
+              <button
+                class="card__like"
+                aria-label="botao like"
+                type="button"
+              ></button>
+            </div>
           </div>
-        </div>
 
-        <!-- 5 cartao-->
-        <div class="cards__card">
-          <img
-            class="card__image"
-            src="./images/cards/Vanoise.png"
-            alt="Foto da Montanha"
-          />
-          <div class="card__footer">
-            <p class="card__name">Parque nacional...</p>
-            <button
-              class="card__like"
-              aria-label="botao like"
-              type="button"
-            ></button>
+          <!-- 5 cartao-->
+          <div class="cards__card">
+            <img
+              class="card__image"
+              src="./images/cards/Vanoise.png"
+              alt="Foto da Montanha"
+            />
+            <div class="card__footer">
+              <p class="card__name">Parque nacional...</p>
+              <button
+                class="card__like"
+                aria-label="botao like"
+                type="button"
+              ></button>
+            </div>
           </div>
-        </div>
 
-        <!-- 6 cartao-->
-        <div class="cards__card">
-          <img
-            class="card__image"
-            src="./images/cards/Braies.png"
-            alt="Foto da Montanha"
-          />
-          <div class="card__footer">
-            <p class="card__name">Lago di Braies</p>
-            <button
-              class="card__like"
-              aria-label="botao like"
-              type="button"
-            ></button>
+          <!-- 6 cartao-->
+          <div class="cards__card">
+            <img
+              class="card__image"
+              src="./images/cards/Braies.png"
+              alt="Foto da Montanha"
+            />
+            <div class="card__footer">
+              <p class="card__name">Lago di Braies</p>
+              <button
+                class="card__like"
+                aria-label="botao like"
+                type="button"
+              ></button>
+            </div>
           </div>
-        </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <p class="footer__copyright">&copy; 2025 Around The U.S.</p>
-    </footer>
-  </div>
-</body>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2025 Around The U.S.</p>
+      </footer>
+    </div>
+
+    <!--pop up-->
+
+    <div class="popup" id="popup">
+      <div class="popup__content">
+        <button class="popup__close" id="popup__close"></button>
+        <h3 class="popup__title">Editar perfil</h3>
+        <form class="popup__form">
+          <input
+            class="popup__input"
+            type="text"
+            name="nome"
+            placeholder="Jacques Cousteau"
+            id="inputName"
+            required
+          />
+          <input
+            class="popup__input"
+            type="text"
+            name="description"
+            placeholder="Explorador"
+            id="inputDescription"
+            required
+          />
+
+          <button type="submit" class="popup__submit" id="submit__btn">
+            Salvar
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>

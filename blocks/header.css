@@ -24,16 +24,17 @@
 
 @media (max-width: 1024px) {
   .header__logo {
-    padding-left: 27px;
+    /* padding-left: 27px;*/
   }
 }
 
-@media (max-width: 544px) {
+@media (max-width: 581px) {
   .header {
     padding-top: 28px;
   }
   .header__logo {
     width: 126px;
     height: 24px;
+    padding-left: 27px;
   }
 }
