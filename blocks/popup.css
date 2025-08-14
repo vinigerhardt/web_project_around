@@ -6,11 +6,11 @@
   max-width: 430px;
   width: 100%;
   display: none;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .popup__content {
   position: relative;
-
   background-color: #fff;
   border-radius: 10px;
   height: 330px;
@@ -77,6 +77,10 @@
 
 .popup__submit:hover {
   opacity: 0.8;
+}
+
+.popup__opened {
+  display: block;
 }
 
 @media (max-width: 581px) {
