@@ -1,12 +1,14 @@
 .popup {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  max-width: 430px;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: none;
+  height: 100%;
+  display: flex;
   background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
 }
 
 .popup__content {
@@ -14,6 +16,8 @@
   background-color: #fff;
   border-radius: 10px;
   height: 330px;
+  max-width: 430px;
+  width: 100%;
 }
 
 .popup__close {
@@ -80,7 +84,7 @@
 }
 
 .popup__opened {
-  display: block;
+  visibility: visible;
 }
 
 @media (max-width: 581px) {
