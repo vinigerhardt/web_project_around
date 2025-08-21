@@ -23,7 +23,7 @@ function handleProfileFormSubmit(evt) {
   const campoNome = document.querySelector("#profile__name"); // pega o nome nome atual que tá no profile
   campoNome.textContent = newName; //seta o novo nome no profile
 
-  const newDescription = document.querySelector("#inputDescription").value; // ok
+  const newDescription = document.querySelector("#inputDescription").value;
   const campoDescription = document.querySelector("#profile__description");
   campoDescription.textContent = newDescription;
   closePopup();

@@ -64,7 +64,11 @@
   }
 }
 
-@media (max-width: 581px) {
+@media (max-width: 600px) {
+  .content {
+    max-width: 581px;
+  }
+
   .content__cards {
     grid-template-columns: 1fr;
     justify-content: center;
