@@ -50,107 +50,21 @@
           <button class="profile__add"></button>
         </section>
         <section class="content__cards cards">
-          <!-- 1 cartao-->
-          <div class="cards__card card">
-            <img
-              class="card__image"
-              src="./images/cards/Yosemite.jpg"
-              alt="Foto do vale de Yosemite"
-            />
-            <div class="card__footer">
-              <p class="card__name">Vale de Yosemite</p>
+          <!-- Template cartao-->
+          <template id="card-template">
+            <div class="cards__card card">
+              <img class="card__image" />
               <button
-                class="card__like"
-                aria-label="botao like"
+                class="card__delete"
+                aria-label="botao apagar"
                 type="button"
               ></button>
+              <div class="card__footer">
+                <p class="card__name"></p>
+                <button class="card__like" type="button"></button>
+              </div>
             </div>
-          </div>
-
-          <!-- 2 cartao-->
-          <div class="cards__card card">
-            <img
-              class="card__image"
-              src="./images/cards/Louise.png"
-              alt="Foto do Lago Louise"
-            />
-            <div class="card__footer">
-              <p class="card__name">Lago Louise</p>
-              <button
-                class="card__like"
-                aria-label="botao like"
-                type="button"
-              ></button>
-            </div>
-          </div>
-
-          <!-- 3 cartao-->
-          <div class="cards__card card">
-            <img
-              class="card__image"
-              src="./images/cards/Montanha.png"
-              alt="Foto da Montanha"
-            />
-            <div class="card__footer">
-              <p class="card__name">Montanhas Care...</p>
-              <button
-                class="card__like"
-                aria-label="botao like"
-                type="button"
-              ></button>
-            </div>
-          </div>
-
-          <!-- 4 cartao-->
-          <div class="cards__card card">
-            <img
-              class="card__image"
-              src="./images/cards/Latemar.png"
-              alt="Foto da Montanha"
-            />
-            <div class="card__footer">
-              <p class="card__name">Latemar</p>
-              <button
-                class="card__like"
-                aria-label="botao like"
-                type="button"
-              ></button>
-            </div>
-          </div>
-
-          <!-- 5 cartao-->
-          <div class="cards__card card">
-            <img
-              class="card__image"
-              src="./images/cards/Vanoise.png"
-              alt="Foto da Montanha"
-            />
-            <div class="card__footer">
-              <p class="card__name">Parque nacional...</p>
-              <button
-                class="card__like"
-                aria-label="botao like"
-                type="button"
-              ></button>
-            </div>
-          </div>
-
-          <!-- 6 cartao-->
-          <div class="cards__card card">
-            <img
-              class="card__image"
-              src="./images/cards/Braies.png"
-              alt="Foto da Montanha"
-            />
-            <div class="card__footer">
-              <p class="card__name">Lago di Braies</p>
-              <button
-                class="card__like"
-                aria-label="botao like"
-                type="button"
-              ></button>
-            </div>
-          </div>
+          </template>
         </section>
       </main>
       <footer class="footer">
