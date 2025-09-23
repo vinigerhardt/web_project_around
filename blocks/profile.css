@@ -73,7 +73,7 @@
   overflow: hidden;
 }
 
-.profile__add {
+.card__add {
   grid-area: add;
   max-width: 150px;
   height: 50px;
