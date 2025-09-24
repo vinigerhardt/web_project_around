@@ -20,6 +20,11 @@
   width: 100%;
 }
 
+.popup__content-image {
+  background: transparent;
+  box-shadow: none;
+}
+
 .popup__close {
   position: absolute;
   background-color: transparent;
@@ -85,11 +90,6 @@
 
 .popup__opened {
   visibility: visible;
-}
-
-.popup__content_content_image {
-  background: transparent;
-  box-shadow: none;
 }
 
 .popup__image {
