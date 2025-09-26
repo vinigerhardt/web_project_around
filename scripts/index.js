@@ -32,21 +32,21 @@ window.addEventListener("load", () => {
 });
 
 //button edit profile
-const editButton = document.getElementById("profile__edit");
+const editProfileButton = document.getElementById("profile__edit");
 const profilePopup = document.getElementById("profilePopup");
-const popupClose = document.getElementById("editPopup__close");
+const editpopupClose = document.getElementById("editPopup__close");
 const popupProfileContent = document.getElementById("popupProfileContent");
+
+editProfileButton.addEventListener("click", () => openPopup(profilePopup));
+editpopupClose.addEventListener("click", () => closePopup(profilePopup));
 
 //button add card
 const cardAddButton = document.getElementById("cardAdd");
-const popupCardContent = document.getElementById("popupCardContent");
+const popupCardContent = document.getElementById("addCardPopup");
 const popupCardClose = document.getElementById("popupCardClose");
 
 cardAddButton.addEventListener("click", () => openPopup(popupCardContent));
 popupCardClose.addEventListener("click", () => closePopup(popupCardContent));
-
-editButton.addEventListener("click", () => openPopup(popupProfileContent));
-popupClose.addEventListener("click", () => closePopup(popupProfileContent));
 
 function openPopup(target) {
   target.classList.add("popup__opened");
@@ -57,7 +57,7 @@ function closePopup(target) {
 }
 
 // botao de salvar profile
-let profileFormElement = document.querySelector("#profilePopup__form");
+const profileFormElement = document.querySelector("#profilePopup__form");
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -69,13 +69,13 @@ function handleProfileFormSubmit(evt) {
   const newDescription = document.querySelector("#inputDescription").value;
   const campoDescription = document.querySelector("#profile__description");
   campoDescription.textContent = newDescription;
-  closePopup(popupProfileContent);
+  closePopup(profilePopup);
 }
 
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 
 //botao de salvar novo card
-let addCardFormElement = document.querySelector("#addCardPopupForm");
+const addCardFormElement = document.querySelector("#addCardPopupForm");
 
 function handleCardFormSubmit(evt) {
   evt.preventDefault();
@@ -131,7 +131,6 @@ function addCard(card) {
 
   //criar listener para imagem abrir popup
   cardImage.addEventListener("click", () => {
-    // Configurar a imagem e legenda do popup
     popupImage.src = card.link;
     popupImage.alt = card.name;
     popupCaption.textContent = card.name;
