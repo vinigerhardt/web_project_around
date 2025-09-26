@@ -117,7 +117,7 @@ function addCard(card) {
     likeButton.classList.toggle("card__like_active");
   });
 
-  //criar listernet para trash (.remove)
+  //cria listernet para trash (.remove)
   const deleteButton = cardElement.querySelector(".card__delete");
   deleteButton.addEventListener("click", () => {
     cardElement.remove();
