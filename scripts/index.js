@@ -147,12 +147,3 @@ function addCard(card) {
   //renderiza o elemento na área destinada
   cardsSection.prepend(cardElement);
 }
-
-function openImagePopup(card) {
-  const popupImageContent = document.querySelector("#popupImageContent");
-  const popupImage = popupImageContent.querySelector("popup__image");
-  const popupCaption = document.querySelector("popupCaption");
-  popupImage.src = card.link;
-  popupCaption.textContent = card.name;
-  popupImageContent.classList.add("popup__opened");
-}
