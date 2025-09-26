@@ -109,6 +109,7 @@ function addCard(card) {
 
   //coloca as informações nesse elemento
   cardElement.querySelector(".card__image").src = card.link;
+  cardElement.querySelector(".card__image").alt = card.name;
   cardElement.querySelector(".card__name").textContent = card.name;
 
   //cria listener para o like
@@ -132,6 +133,7 @@ function addCard(card) {
   //criar listener para imagem abrir popup
   cardImage.addEventListener("click", () => {
     popupImage.src = card.link;
+    popupImage.alt = card.name;
     popupImage.alt = card.name;
     popupCaption.textContent = card.name;
 
