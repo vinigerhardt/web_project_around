@@ -1,3 +1,12 @@
+import {
+  showInputError,
+  hideInputError,
+  enableValidation,
+  setEventListener,
+  isValid,
+  toggleBtnState,
+} from "./validate.js";
+
 const initialCards = [
   {
     name: "Vale de Yosemite",
@@ -50,13 +59,35 @@ popupCardClose.addEventListener("click", () => closePopup(popupCardContent));
 
 function openPopup(target) {
   target.classList.add("popup__opened");
+
+  document.addEventListener("keydown", function (key) {
+    if (key.code === "Escape") {
+      closePopup(target);
+    }
+  });
+
+  target.addEventListener("click", closeByOverlay);
 }
 
 function closePopup(target) {
   target.classList.remove("popup__opened");
+  document.removeEventListener("keydown", function (key) {
+    if (key.code === "Escape") {
+      closePopup(target);
+    }
+  });
+  target.removeEventListener("click", closeByOverlay);
+  //resetValidation;
 }
 
-// botao de salvar profile
+function closeByOverlay(evt) {
+  // Se clicou exatamente no popup (sobreposição), fecha
+  if (evt.target === evt.currentTarget) {
+    closePopup(evt.target);
+  }
+}
+
+// Elemento form de editar profile
 const profileFormElement = document.querySelector("#profilePopup__form");
 
 function handleProfileFormSubmit(evt) {
@@ -80,8 +111,8 @@ const addCardFormElement = document.querySelector("#addCardPopupForm");
 function handleCardFormSubmit(evt) {
   evt.preventDefault();
 
-  const newCardTitle = document.querySelector("#newCardtittle").value;
-  const newCardImage = document.querySelector("#newCardImage").value;
+  const newCardTitle = document.querySelector("#input-newCardtittle").value;
+  const newCardImage = document.querySelector("#input-newCardImage").value;
   const newCardData = {
     name: newCardTitle,
     link: newCardImage,
@@ -146,4 +177,54 @@ function addCard(card) {
 
   //renderiza o elemento na área destinada
   cardsSection.prepend(cardElement);
-}
+} //fim de addCard
+
+// Form validation
+
+const inputNameElement = document.querySelector("#input-name");
+const inputDescriptionElement = document.querySelector("#input-description");
+const config = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible",
+};
+
+// Listener para nome
+inputNameElement.addEventListener("input", () => {
+  if (inputNameElement.validity.valid) {
+    hideInputError(profileFormElement, inputNameElement, config);
+  } else {
+    showInputError(
+      profileFormElement,
+      inputNameElement,
+      inputNameElement.validationMessage,
+      config
+    );
+  }
+});
+
+//Listener para description
+inputDescriptionElement.addEventListener("input", () => {
+  if (inputDescriptionElement.validity.valid) {
+    hideInputError(profileFormElement, inputDescriptionElement, config);
+  } else {
+    showInputError(
+      profileFormElement,
+      inputDescriptionElement,
+      inputDescriptionElement.validationMessage,
+      config
+    );
+  }
+});
+
+enableValidation({
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__submit",
+  inactiveButtonClass: "popup__submit_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "input-error",
+});

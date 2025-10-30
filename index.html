@@ -78,25 +78,41 @@
       <div class="popup__content" id="popupProfileContent">
         <button class="popup__close" id="editPopup__close"></button>
         <h3 class="popup__title">Editar perfil</h3>
-        <form class="popup__form" id="profilePopup__form">
-          <input
-            class="popup__input"
-            type="text"
-            name="nome"
-            placeholder="Jacques Cousteau"
-            id="inputName"
-            required
-          />
-          <input
-            class="popup__input"
-            type="text"
-            name="description"
-            placeholder="Explorador"
-            id="inputDescription"
-            required
-          />
+        <form class="popup__form" id="profilePopup__form" novalidate>
+          <label class="popup__form_input-element">
+            <input
+              class="popup__input"
+              type="text"
+              name="nome"
+              placeholder="Jacques Cousteau"
+              id="input-name"
+              minlength="2"
+              maxlength="40"
+              required
+            />
+            <span class="input-name-error input-error"></span>
+          </label>
+          <label class="popup__form_input-element">
+            <input
+              class="popup__input"
+              type="text"
+              name="description"
+              placeholder="Explorador"
+              id="input-description"
+              minlength="2"
+              maxlength="200"
+              required
+            />
+            <span class="input-description-error input-error"></span>
+          </label>
 
-          <button type="submit" class="popup__submit">Salvar</button>
+          <button
+            type="submit"
+            disabled
+            class="popup__submit popup__submit_disabled"
+          >
+            Salvar
+          </button>
         </form>
       </div>
     </div>
@@ -108,23 +124,33 @@
         <button class="popup__close" id="popupCardClose"></button>
         <h3 class="popup__title">Novo local</h3>
         <form class="popup__form" id="addCardPopupForm">
-          <input
-            class="popup__input"
-            type="text"
-            name="nome"
-            placeholder="Título"
-            id="newCardtittle"
-            required
-          />
-          <input
-            class="popup__input"
-            type="text"
-            name="description"
-            placeholder="Link da imagem"
-            id="newCardImage"
-            required
-          />
-          <button type="submit" class="popup__submit">Criar</button>
+          <label class="popup__form_input-element">
+            <input
+              class="popup__input"
+              type="text"
+              name="nome"
+              placeholder="Título"
+              id="input-newCardtittle"
+              minlength="2"
+              maxlength="30"
+              required
+            />
+            <span class="input-newCardtittle-error input-error"></span>
+          </label>
+          <label class="popup__form_input-element">
+            <input
+              class="popup__input"
+              type="url"
+              name="description"
+              placeholder="Link da imagem"
+              id="input-newCardImage"
+              required
+            />
+            <span class="input-newCardImage-error input-error"></span>
+          </label>
+          <button type="submit" class="popup__submit popup__submit_disabled">
+            Criar
+          </button>
         </form>
       </div>
     </div>
@@ -140,6 +166,7 @@
     </div>
     <!--Fim do popup image -->
 
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/index.js" type="module"></script>
+    <script src="./scripts/validate.js" type="module"></script>
   </body>
 </html>
