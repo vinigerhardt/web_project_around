@@ -93,11 +93,11 @@ const profileFormElement = document.querySelector("#profilePopup__form");
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
-  const newName = document.querySelector("#inputName").value; //pega o novo nome no popup
-  const campoNome = document.querySelector("#profile__name"); // pega o nome nome atual que tá no profile
+  const newName = document.querySelector("#input-name").value; //pega o novo nome no popup
+  const campoNome = document.querySelector("#profile__name"); // pega o campo nome que tá no profile
   campoNome.textContent = newName; //seta o novo nome no profile
 
-  const newDescription = document.querySelector("#inputDescription").value;
+  const newDescription = document.querySelector("#input-description").value;
   const campoDescription = document.querySelector("#profile__description");
   campoDescription.textContent = newDescription;
   closePopup(profilePopup);
