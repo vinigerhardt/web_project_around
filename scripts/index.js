@@ -60,24 +60,24 @@ popupCardClose.addEventListener("click", () => closePopup(popupCardContent));
 function openPopup(target) {
   target.classList.add("popup__opened");
 
-  document.addEventListener("keydown", function (key) {
-    if (key.code === "Escape") {
-      closePopup(target);
-    }
-  });
+  document.addEventListener("keydown", closeByEsc);
 
   target.addEventListener("click", closeByOverlay);
 }
 
 function closePopup(target) {
   target.classList.remove("popup__opened");
-  document.removeEventListener("keydown", function (key) {
-    if (key.code === "Escape") {
-      closePopup(target);
-    }
-  });
+  document.removeEventListener("keydown", closeByEsc);
   target.removeEventListener("click", closeByOverlay);
   //resetValidation;
+}
+
+function closeByEsc(evt) {
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".popup__opened");
+
+    closePopup(openedPopup);
+  }
 }
 
 function closeByOverlay(evt) {
